@@ -6,11 +6,12 @@ import model.merchant.Merchant;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.UUID;
 
 public class Transaction extends BaseModel {
     private boolean isChecked = false;
     private boolean isSuccess = false;
-    private boolean isInprocessing = false;
+    private boolean isProcessing = false;
     private String transactionAccount;
     private BigDecimal transactionAmount;
     private BigDecimal transactionAmountCurrency;
@@ -45,10 +46,9 @@ public class Transaction extends BaseModel {
         this.transactionState = transactionState;
     }
 
-    public Transaction() {
+    public Transaction(String name, UUID id) {
+        super(name,id);
     }
-
-
 
     public String getTransactionAccount() {
         return transactionAccount;
@@ -125,7 +125,7 @@ public class Transaction extends BaseModel {
       return statedId == TransactionState.CHECKED.getValue();
     }
 
-    public boolean isInprocessing() {
+    public boolean isProcessing() {
         return statedId == TransactionState.IN_PROCESS.getValue();
     }
 

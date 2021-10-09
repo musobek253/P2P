@@ -11,7 +11,10 @@ public class BaseModel {
         this.name = name;
     }
 
-    public BaseModel(){}
+    public BaseModel(String name, UUID id){
+        this.id = id;
+        this.name = name;
+    }
 
     public String getName() {
         return name;
@@ -29,3 +32,4 @@ public class BaseModel {
         this.id = UUID.randomUUID();
     }
 }
+

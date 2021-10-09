@@ -2,17 +2,17 @@ package model.authorization;
 
 import model.base.BaseModel;
 
+import java.util.UUID;
+
 public class User extends BaseModel {
     private String phoneNumber;
     private String password;
     private String email;
     private int age;
 
-    public User() {
-    }
 
-    public User(String name, String phoneNumber, String password, String email, int age) {
-        super(name);
+    public User(String name, UUID id, String phoneNumber, String password, String email, int age) {
+        super(name, id);
         this.phoneNumber = phoneNumber;
         this.password = password;
         this.email = email;
@@ -57,7 +57,9 @@ public class User extends BaseModel {
                 "phoneNumber='" + phoneNumber + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
-                ", age=" + age +
+                ", age=" + age +'\'' +
+                ", id=" +getId() + '\'' +
+                ", id=" +getName() + '\'' +
                 '}';
     }
 }

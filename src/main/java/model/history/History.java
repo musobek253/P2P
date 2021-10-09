@@ -9,7 +9,8 @@ public class History extends BaseModel {
  private UUID paymentId;
  private UUID userId;
 
-    public History() {
+    public History(String name, UUID id) {
+        super(name,id);
     }
 
     public History(String name, UUID p2pId, UUID paymentId, UUID userId) {

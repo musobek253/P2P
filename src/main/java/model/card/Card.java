@@ -15,12 +15,13 @@ public class Card  extends BaseModel {
     private String password;
     private List<UUID> userIds= new ArrayList<>(10);
 
-    public Card() {
-
+    public Card(String name, UUID id) {
+        super(name, id);
     }
 
     public Card(
             String name,
+            UUID id,
             String cardNumber,
             String expiryDate,
             CardType cardType,
@@ -28,7 +29,7 @@ public class Card  extends BaseModel {
             String password,
             UUID userId
     ) {
-        super(name);
+        super(name,id);
         this.cardNumber = cardNumber;
         this.expiryDate = expiryDate;
         this.cardType = cardType;

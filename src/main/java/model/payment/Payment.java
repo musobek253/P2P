@@ -11,8 +11,11 @@ public class Payment extends BaseModel {
     private String transactionAccount;
 
 
-    public Payment() {
+    public Payment(String name, UUID id) {
+        super(name,id);
     }
+
+
 
     public Payment(String name, UUID sourceCardId, BigDecimal transferAmount, String transactionAccount) {
         super(name);
