@@ -16,6 +16,10 @@ public class BaseModel {
         this.name = name;
     }
 
+    public BaseModel() {
+
+    }
+
     public String getName() {
         return name;
     }

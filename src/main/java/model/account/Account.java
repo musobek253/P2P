@@ -9,15 +9,10 @@ public class Account extends BaseModel {
     private BigDecimal balance;
     private Integer getewayId;
 
-    public Account(String name, UUID id, BigDecimal balance, Integer getewayId) {
-        super(name,id);
-        this.balance = balance;
-        this.getewayId = getewayId;
+    public Account() {
+        super();
     }
 
-    public Account(String name, UUID id) {
-        super(name,id);
-    }
 
     public BigDecimal getBalance() {
         return balance;
