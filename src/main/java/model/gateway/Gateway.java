@@ -96,6 +96,7 @@ public class Gateway {
         return merchantId;
     }
 
+
     public void setMerchantId(int merchantId) {
         this.merchantId = merchantId;
     }

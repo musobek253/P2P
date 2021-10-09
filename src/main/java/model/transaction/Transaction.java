@@ -74,7 +74,7 @@ public class Transaction extends BaseModel {
         this.transactionAmountCurrency = transactionAmountCurrency;
     }
 
-    public int getStatedId() {
+    public int getStatedId(int value) {
         return statedId;
     }
 
