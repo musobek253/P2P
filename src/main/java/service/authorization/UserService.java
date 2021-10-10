@@ -42,7 +42,18 @@ public class UserService extends BaseService {
 
     @Override
     public boolean edit(Object object) {
-        return false;
+        User editUser = (User) object;
+        boolean isSuccess = false;
+        for (int i = 0; i < users.size() && !isSuccess; i++) {
+            if (users.get(i) != null) {
+                if (users.get(i).getPhoneNumber().equals(editUser.getPhoneNumber())) {
+                    isSuccess = true;
+                    users.get(i).setAge(editUser.getAge());
+                    users.get(i).setName(editUser.getName());
+                }
+            }
+        }
+        return isSuccess;
     }
 
     @Override
@@ -52,11 +63,29 @@ public class UserService extends BaseService {
 
     @Override
     public void list() {
+        for (int i = 0; i < users.size(); i++) {
+            User user = users.get(i);
+            if(users.get(i)!= null){
+                System.out.println("=============== " + (i + 1) + "=======================");
+                System.out.println("username: " + user.getPhoneNumber());
+                System.out.println("name: " + user.getName());
+                System.out.println("password: " + getMaskPassword(user.getPassword()));
+            }
 
+        }
     }
 
     @Override
     public void list(Object object) {
 
+    }
+    public String getMaskPassword(String str){
+        String s = "";
+        for (int i = 0; i < str.length(); i++) {
+            s+= "*";
+
+
+        }
+        return s;
     }
 }
